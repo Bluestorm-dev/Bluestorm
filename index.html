@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="color-scheme" content="dark light" />
+
+  <title>BlueStorm</title>
+  <meta name="description" content="BlueStorm — cockpit perso de formation (offline-first) : programme, journal, flashcards, compétences." />
+
+  <!-- PWA -->
+  <link rel="manifest" href="./manifest.json" />
+  <meta name="theme-color" content="#0d1220" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <link rel="apple-touch-icon" href="./assets/images/icons/icon-192.png" />
+
+  <!-- Favicon (optionnel, mets ton fichier si tu veux) -->
+  <!-- <link rel="icon" href="./assets/images/icons/favicon.ico" /> -->
+
+  <!-- CSS (ordre important) -->
+  <link rel="stylesheet" href="./styles/00-reset.css" />
+  <link rel="stylesheet" href="./styles/10-tokens.css" />
+  <link rel="stylesheet" href="./styles/20-base.css" />
+  <link rel="stylesheet" href="./styles/30-components.css" />
+  <link rel="stylesheet" href="./styles/40-pages.css" />
+  <link rel="stylesheet" href="./styles/90-theme-bluestorm.css" />
+</head>
+
+<body>
+  <!-- Top bar -->
+  <header class="topbar" role="banner">
+    <div class="topbar__left">
+      <img
+        class="topbar__logo"
+        src="./assets/images/ui/bluestorm-logo.svg"
+        alt="BlueStorm"
+        width="28"
+        height="28"
+        loading="eager"
+      />
+      <div class="topbar__titlewrap">
+        <div class="topbar__title">BlueStorm</div>
+        <div class="topbar__subtitle" id="topbarSubtitle">Cockpit</div>
+      </div>
+    </div>
+
+    <div class="topbar__right">
+      <button class="iconbtn" id="quickAddBtn" type="button" aria-label="Nouvelle entrée">
+        ＋
+      </button>
+      <button class="iconbtn" id="syncBtn" type="button" aria-label="Synchroniser">
+        ⟳
+      </button>
+    </div>
+  </header>
+
+  <!-- Main app container (SPA outlet) -->
+  <main id="app" class="app" role="main" aria-live="polite">
+    <!-- Le router injecte ici -->
+  </main>
+
+  <!-- Bottom nav -->
+<!-- Bottom nav (montée par JS) -->
+<footer id="bottomNav" class="bottomnav-mount" role="contentinfo"></footer>
+
+
+  <!-- Toast container -->
+  <div id="toasts" class="toasts" aria-live="polite" aria-atomic="true"></div>
+
+  <!-- Modal root -->
+  <div id="modalRoot" class="modal-root" hidden></div>
+
+  <!-- App entry -->
+  <script type="module" src="./js/app.js"></script>
+
+  <!-- Service Worker -->
+  <script>
+    (function registerSW() {
+      if (!("serviceWorker" in navigator)) return;
+      window.addEventListener("load", () => {
+        navigator.serviceWorker.register("./sw.js").catch(() => {
+          // silencieux: l'app doit fonctionner même sans SW
+        });
+      });
+    })();
+  </script>
+</body>
+</html>

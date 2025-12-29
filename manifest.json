@@ -1,0 +1,84 @@
+{
+  "name": "BlueStorm",
+  "short_name": "BlueStorm",
+  "description": "Couteau suisse de formation personnelle : programme, journal, flashcards, skills et cockpit.",
+  "lang": "fr-FR",
+
+  "start_url": "./index.html",
+  "scope": "./",
+
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#020617",
+  "theme_color": "#3B82F6",
+
+  "categories": ["education", "productivity", "developer"],
+
+  "icons": [
+    {
+      "src": "./icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "./icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "./icons/maskable-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "./icons/maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+
+  "screenshots": [
+    {
+      "src": "./screenshots/cockpit.png",
+      "sizes": "1080x1920",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Cockpit – vue d’ensemble"
+    },
+    {
+      "src": "./screenshots/journal.png",
+      "sizes": "1080x1920",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Journal d’activité"
+    }
+  ],
+
+  "shortcuts": [
+    {
+      "name": "Cockpit",
+      "short_name": "Cockpit",
+      "description": "Vue d’ensemble de la formation",
+      "url": "./#/",
+      "icons": [{ "src": "./icons/icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Journal",
+      "short_name": "Journal",
+      "description": "Ajouter une entrée de journal",
+      "url": "./#/journal/new",
+      "icons": [{ "src": "./icons/icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Flashcards",
+      "short_name": "Cards",
+      "description": "Réviser maintenant",
+      "url": "./#/flashcards",
+      "icons": [{ "src": "./icons/icon-192.png", "sizes": "192x192" }]
+    }
+  ],
+
+  "prefer_related_applications": false
+}

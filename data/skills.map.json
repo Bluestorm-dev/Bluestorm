@@ -1,0 +1,239 @@
+{
+  "meta": {
+    "version": "1.0",
+    "name": "BlueStorm Skills Map",
+    "description": "Arbre de compétences du programme BlueStorm (2 ans)",
+    "author": "BlueStorm",
+    "updatedAt": "2025-01-01"
+  },
+
+  "domains": [
+    {
+      "id": "foundations",
+      "label": "Fondations Web",
+      "icon": "🧱",
+      "order": 1,
+      "skills": [
+        {
+          "id": "html_basics",
+          "label": "HTML – bases",
+          "description": "Structure sémantique, balises essentielles",
+          "levels": [
+            {
+              "level": 1,
+              "label": "Comprendre",
+              "unlock": {
+                "weeksCompleted": [1, 2],
+                "journalEntries": 5
+              }
+            },
+            {
+              "level": 2,
+              "label": "Utiliser",
+              "unlock": {
+                "flashcardsMastered": 15
+              }
+            }
+          ],
+          "badge": "html-initiate"
+        },
+        {
+          "id": "css_basics",
+          "label": "CSS – bases",
+          "description": "Selecteurs, box model, flexbox",
+          "levels": [
+            {
+              "level": 1,
+              "label": "Comprendre",
+              "unlock": {
+                "weeksCompleted": [3, 4]
+              }
+            },
+            {
+              "level": 2,
+              "label": "Maîtriser",
+              "unlock": {
+                "flashcardsMastered": 20,
+                "journalEntries": 10
+              }
+            }
+          ],
+          "badge": "css-flex"
+        }
+      ]
+    },
+
+    {
+      "id": "javascript",
+      "label": "JavaScript",
+      "icon": "⚡",
+      "order": 2,
+      "skills": [
+        {
+          "id": "js_core",
+          "label": "JS – Fondamentaux",
+          "description": "Variables, fonctions, conditions, boucles",
+          "levels": [
+            {
+              "level": 1,
+              "label": "Lire",
+              "unlock": {
+                "weeksCompleted": [5, 6]
+              }
+            },
+            {
+              "level": 2,
+              "label": "Écrire",
+              "unlock": {
+                "journalEntries": 15
+              }
+            },
+            {
+              "level": 3,
+              "label": "Expliquer",
+              "unlock": {
+                "flashcardsMastered": 30
+              }
+            }
+          ],
+          "badge": "js-core"
+        },
+        {
+          "id": "dom_manipulation",
+          "label": "DOM & Events",
+          "description": "querySelector, addEventListener, dynamique UI",
+          "levels": [
+            {
+              "level": 1,
+              "label": "Comprendre",
+              "unlock": {
+                "weeksCompleted": [7]
+              }
+            },
+            {
+              "level": 2,
+              "label": "Créer",
+              "unlock": {
+                "journalEntries": 10,
+                "flashcardsMastered": 20
+              }
+            }
+          ],
+          "badge": "dom-master"
+        }
+      ]
+    },
+
+    {
+      "id": "threejs",
+      "label": "Three.js & 3D",
+      "icon": "🧊",
+      "order": 3,
+      "skills": [
+        {
+          "id": "three_basics",
+          "label": "Three.js – bases",
+          "description": "Scene, camera, mesh, render loop",
+          "levels": [
+            {
+              "level": 1,
+              "label": "Découvrir",
+              "unlock": {
+                "weeksCompleted": [12]
+              }
+            },
+            {
+              "level": 2,
+              "label": "Manipuler",
+              "unlock": {
+                "journalEntries": 8
+              }
+            }
+          ],
+          "badge": "three-init"
+        }
+      ]
+    },
+
+    {
+      "id": "design",
+      "label": "UX / UI Design",
+      "icon": "🎨",
+      "order": 4,
+      "skills": [
+        {
+          "id": "figma",
+          "label": "Figma",
+          "description": "Wireframes, composants, auto-layout",
+          "levels": [
+            {
+              "level": 1,
+              "label": "Utiliser",
+              "unlock": {
+                "weeksCompleted": [10]
+              }
+            },
+            {
+              "level": 2,
+              "label": "Structurer",
+              "unlock": {
+                "journalEntries": 6
+              }
+            }
+          ],
+          "badge": "figma-flow"
+        }
+      ]
+    },
+
+    {
+      "id": "methodology",
+      "label": "Méthode & Autonomie",
+      "icon": "🧭",
+      "order": 5,
+      "skills": [
+        {
+          "id": "learning_habits",
+          "label": "Habitudes d’apprentissage",
+          "description": "Journal, régularité, réflexion",
+          "levels": [
+            {
+              "level": 1,
+              "label": "Régulier",
+              "unlock": {
+                "journalStreakDays": 7
+              }
+            },
+            {
+              "level": 2,
+              "label": "Autonome",
+              "unlock": {
+                "journalStreakDays": 21,
+                "flashcardsMastered": 50
+              }
+            }
+          ],
+          "badge": "self-learner"
+        }
+      ]
+    }
+  ],
+
+  "easterEggs": [
+    {
+      "id": "night_owl",
+      "label": "Night Owl 🦉",
+      "condition": {
+        "journalEntriesAfter": "22:00",
+        "count": 5
+      }
+    },
+    {
+      "id": "marathon",
+      "label": "Marathon Learner 🏃",
+      "condition": {
+        "studyTimeInOneDayMinutes": 300
+      }
+    }
+  ]
+}

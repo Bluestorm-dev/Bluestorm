@@ -1,0 +1,203 @@
+/* styles/20-base.css
+   Base layout + typographie globale (mobile-first)
+*/
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: var(--font-main);
+  background: radial-gradient(
+      1200px 700px at 20% -10%,
+      rgba(0, 198, 255, 0.18),
+      transparent 60%
+    ),
+    radial-gradient(
+      900px 600px at 90% 10%,
+      rgba(108, 124, 255, 0.14),
+      transparent 55%
+    ),
+    var(--color-bg-main);
+  color: var(--color-text-main);
+  line-height: var(--line-height-normal);
+}
+
+/* Prevent content from being hidden under fixed top/bottom bars */
+:root {
+  --topbar-height: 58px;
+  --bottomnav-height: 68px;
+}
+
+.app {
+  padding:
+    calc(var(--space-4) + var(--safe-top))
+    var(--space-4)
+    calc(var(--space-6) + var(--bottomnav-height) + var(--safe-bottom))
+    var(--space-4);
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+/* =========================
+   LINKS / TEXT
+   ========================= */
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+small {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  background: var(--color-border-soft);
+  margin: var(--space-5) 0;
+}
+
+/* =========================
+   TOP BAR
+   ========================= */
+.topbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  height: var(--topbar-height);
+  padding: calc(var(--space-2) + var(--safe-top)) var(--space-4) var(--space-2);
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--space-3);
+
+  background: rgba(13, 18, 32, 0.72);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--color-border-soft);
+  z-index: var(--z-header);
+}
+
+.topbar__left {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  min-width: 0;
+}
+
+.topbar__logo {
+  width: 28px;
+  height: 28px;
+  filter: drop-shadow(0 0 10px var(--color-glow-soft));
+}
+
+.topbar__titlewrap {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+}
+
+.topbar__title {
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-md);
+  letter-spacing: 0.2px;
+  line-height: var(--line-height-tight);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.topbar__subtitle {
+  font-weight: var(--font-weight-regular);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.topbar__right {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+/* =========================
+   ICON BUTTONS
+   ========================= */
+.iconbtn {
+  height: 38px;
+  min-width: 38px;
+  padding: 0 var(--space-3);
+  border-radius: var(--radius-pill);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--color-border-soft);
+  box-shadow: var(--shadow-xs);
+
+  transition: transform var(--transition-fast) var(--ease-out-soft),
+    background var(--transition-normal) var(--ease-out-soft),
+    border-color var(--transition-normal) var(--ease-out-soft);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.iconbtn:active {
+  transform: scale(0.98);
+}
+
+.iconbtn:focus-visible {
+  outline: 2px solid rgba(0, 198, 255, 0.5);
+  outline-offset: 2px;
+}
+
+/* =========================
+   UTILITIES
+   ========================= */
+.sr-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+.muted {
+  color: var(--color-text-muted);
+}
+
+.dim {
+  color: var(--color-text-dim);
+}
+
+/* =========================
+   RESPONSIVE (simple)
+   ========================= */
+@media (min-width: 720px) {
+  :root {
+    --topbar-height: 64px;
+    --bottomnav-height: 72px;
+  }
+
+  .app {
+    padding:
+      calc(var(--space-5) + var(--safe-top))
+      var(--space-6)
+      calc(var(--space-7) + var(--bottomnav-height) + var(--safe-bottom))
+      var(--space-6);
+  }
+
+  .topbar {
+    padding: calc(var(--space-3) + var(--safe-top)) var(--space-6) var(--space-3);
+  }
+}

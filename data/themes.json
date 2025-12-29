@@ -1,0 +1,151 @@
+{
+  "meta": {
+    "name": "BlueStorm",
+    "version": "1.0",
+    "description": "Thème UI principal de l’application BlueStorm",
+    "defaultMode": "dark"
+  },
+
+  "colors": {
+    "brand": {
+      "primary": "#3B82F6",
+      "secondary": "#0EA5E9",
+      "accent": "#22D3EE",
+      "storm": "#1E293B"
+    },
+
+    "background": {
+      "app": "#020617",
+      "surface": "#020617",
+      "card": "#020617",
+      "overlay": "rgba(2, 6, 23, 0.85)"
+    },
+
+    "text": {
+      "primary": "#E5E7EB",
+      "secondary": "#9CA3AF",
+      "muted": "#6B7280",
+      "inverse": "#020617"
+    },
+
+    "border": {
+      "soft": "rgba(148, 163, 184, 0.15)",
+      "strong": "rgba(148, 163, 184, 0.3)"
+    },
+
+    "state": {
+      "success": "#22C55E",
+      "warning": "#F59E0B",
+      "danger": "#EF4444",
+      "info": "#38BDF8"
+    },
+
+    "progress": {
+      "track": "rgba(148,163,184,0.2)",
+      "bar": "#3B82F6"
+    }
+  },
+
+  "typography": {
+    "fontFamily": {
+      "base": "Inter, system-ui, -apple-system, sans-serif",
+      "mono": "JetBrains Mono, monospace"
+    },
+
+    "fontSize": {
+      "xs": "0.75rem",
+      "sm": "0.875rem",
+      "base": "1rem",
+      "lg": "1.125rem",
+      "xl": "1.25rem",
+      "2xl": "1.5rem"
+    },
+
+    "fontWeight": {
+      "regular": 400,
+      "medium": 500,
+      "semibold": 600,
+      "bold": 700
+    },
+
+    "lineHeight": {
+      "tight": 1.25,
+      "normal": 1.5,
+      "relaxed": 1.75
+    }
+  },
+
+  "spacing": {
+    "xs": "4px",
+    "sm": "8px",
+    "md": "12px",
+    "lg": "16px",
+    "xl": "24px",
+    "2xl": "32px"
+  },
+
+  "radius": {
+    "sm": "6px",
+    "md": "10px",
+    "lg": "14px",
+    "xl": "20px",
+    "pill": "999px"
+  },
+
+  "shadow": {
+    "soft": "0 4px 20px rgba(0,0,0,0.3)",
+    "card": "0 6px 24px rgba(0,0,0,0.35)",
+    "focus": "0 0 0 2px rgba(59,130,246,0.5)"
+  },
+
+  "components": {
+    "button": {
+      "height": "44px",
+      "padding": "0 16px",
+      "radius": "md"
+    },
+
+    "card": {
+      "padding": "16px",
+      "radius": "lg"
+    },
+
+    "input": {
+      "height": "44px",
+      "radius": "md"
+    },
+
+    "chip": {
+      "height": "28px",
+      "radius": "pill"
+    }
+  },
+
+  "animations": {
+    "duration": {
+      "fast": "120ms",
+      "normal": "200ms",
+      "slow": "360ms"
+    },
+
+    "easing": {
+      "standard": "cubic-bezier(0.4, 0, 0.2, 1)",
+      "out": "cubic-bezier(0, 0, 0.2, 1)"
+    }
+  },
+
+  "badges": {
+    "locked": {
+      "opacity": 0.35,
+      "grayscale": true
+    },
+    "unlocked": {
+      "glow": "0 0 12px rgba(59,130,246,0.6)"
+    }
+  },
+
+  "easterEggs": {
+    "enableGlow": true,
+    "specialColor": "#A5F3FC"
+  }
+}

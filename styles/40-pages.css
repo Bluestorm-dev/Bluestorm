@@ -1,0 +1,422 @@
+/* styles/40-pages.css
+   Styles spécifiques par page (pas de composants génériques ici)
+   Les pages sont identifiées par un attribut data-page sur <main id="app">
+   Exemple: <main id="app" class="app" data-page="cockpit"></main>
+*/
+
+/* =========================
+   PAGE HEADERS (sections)
+   ========================= */
+.page-header {
+  display: grid;
+  gap: var(--space-2);
+  margin-bottom: var(--space-4);
+}
+
+.page-title {
+  font-size: var(--font-size-xxl);
+  line-height: var(--line-height-tight);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: 0.2px;
+}
+
+.page-desc {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+}
+
+/* =========================
+   COCKPIT
+   ========================= */
+#app[data-page="cockpit"] .cockpit-grid {
+  display: grid;
+  gap: var(--space-4);
+}
+
+#app[data-page="cockpit"] .hero {
+  position: relative;
+  overflow: hidden;
+}
+
+#app[data-page="cockpit"] .hero::after {
+  content: "";
+  position: absolute;
+  inset: -40px;
+  background: radial-gradient(
+    500px 240px at 20% 0%,
+    rgba(0, 198, 255, 0.18),
+    transparent 60%
+  );
+  pointer-events: none;
+}
+
+#app[data-page="cockpit"] .hero-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+#app[data-page="cockpit"] .kpi {
+  display: grid;
+  gap: 2px;
+}
+
+#app[data-page="cockpit"] .kpi__value {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+}
+
+#app[data-page="cockpit"] .kpi__label {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+}
+
+/* =========================
+   JOURNAL (liste)
+   ========================= */
+#app[data-page="journal"] .journal-toolbar {
+  display: grid;
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+}
+
+#app[data-page="journal"] .search {
+  display: flex;
+  gap: var(--space-2);
+  align-items: center;
+
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-pill);
+
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--color-border-soft);
+}
+
+#app[data-page="journal"] .search input {
+  width: 100%;
+  background: transparent;
+  border: 0;
+  outline: none;
+  color: var(--color-text-main);
+}
+
+#app[data-page="journal"] .journal-item {
+  position: relative;
+  padding-left: calc(var(--space-4) + 10px);
+}
+
+#app[data-page="journal"] .journal-item::before {
+  content: "";
+  position: absolute;
+  left: var(--space-3);
+  top: var(--space-4);
+  width: 6px;
+  height: 6px;
+  border-radius: var(--radius-pill);
+  background: var(--color-primary-soft);
+  box-shadow: 0 0 14px var(--color-glow-soft);
+}
+
+#app[data-page="journal"] .journal-item__title {
+  font-weight: var(--font-weight-medium);
+}
+
+#app[data-page="journal"] .journal-item__text {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+  margin-top: 6px;
+}
+
+/* =========================
+   JOURNAL (nouvelle entrée)
+   ========================= */
+#app[data-page="journal-new"] .form {
+  display: grid;
+  gap: var(--space-4);
+}
+
+#app[data-page="journal-new"] .field {
+  display: grid;
+  gap: var(--space-2);
+}
+
+#app[data-page="journal-new"] label {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+}
+
+#app[data-page="journal-new"] input,
+#app[data-page="journal-new"] textarea,
+#app[data-page="journal-new"] select {
+  width: 100%;
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border-soft);
+  background: rgba(255, 255, 255, 0.06);
+  outline: none;
+}
+
+#app[data-page="journal-new"] textarea {
+  min-height: 120px;
+}
+
+/* =========================
+   PROGRAMME (blocs / semaines)
+   ========================= */
+#app[data-page="program"] .block {
+  display: grid;
+  gap: var(--space-3);
+}
+
+#app[data-page="program"] .block-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+#app[data-page="program"] .block-title {
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-lg);
+}
+
+#app[data-page="program"] .week-grid {
+  display: grid;
+  gap: var(--space-3);
+}
+
+#app[data-page="program"] .week-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+#app[data-page="program"] .week-meta {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+}
+
+/* =========================
+   WEEK (détail semaine)
+   ========================= */
+#app[data-page="week"] .week-head {
+  display: grid;
+  gap: var(--space-2);
+  margin-bottom: var(--space-4);
+}
+
+#app[data-page="week"] .week-sub {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+}
+
+#app[data-page="week"] .todo-section {
+  display: grid;
+  gap: var(--space-3);
+  margin-top: var(--space-4);
+}
+
+#app[data-page="week"] .todo-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+  font-weight: var(--font-weight-bold);
+}
+
+#app[data-page="week"] .todo-list {
+  display: grid;
+  gap: var(--space-2);
+}
+
+#app[data-page="week"] .todo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-md);
+  background: var(--color-bg-surface);
+  border: 1px solid var(--color-border-soft);
+}
+
+#app[data-page="week"] .todo input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+}
+
+/* =========================
+   FLASHCARDS (révision)
+   ========================= */
+#app[data-page="flashcards"] .flashcard-wrap {
+  display: grid;
+  gap: var(--space-4);
+}
+
+#app[data-page="flashcards"] .flashcard {
+  position: relative;
+  overflow: hidden;
+}
+
+#app[data-page="flashcards"] .flashcard__q {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  margin-bottom: var(--space-3);
+}
+
+#app[data-page="flashcards"] .flashcard__a {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-md);
+  line-height: var(--line-height-loose);
+}
+
+#app[data-page="flashcards"] .grade-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-3);
+}
+
+#app[data-page="flashcards"] .grade-row .btn {
+  width: 100%;
+}
+
+/* =========================
+   SKILLS (arbre simple)
+   ========================= */
+#app[data-page="skills"] .skills-toolbar {
+  display: flex;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+  margin-bottom: var(--space-4);
+}
+
+#app[data-page="skills"] .tree {
+  display: grid;
+  gap: var(--space-3);
+}
+
+#app[data-page="skills"] .node {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+
+  padding: var(--space-4);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border-soft);
+  background: var(--color-bg-card);
+}
+
+#app[data-page="skills"] .node__left {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  min-width: 0;
+}
+
+#app[data-page="skills"] .node__dot {
+  width: 12px;
+  height: 12px;
+  border-radius: var(--radius-pill);
+  background: rgba(255, 255, 255, 0.25);
+}
+
+#app[data-page="skills"] .node[data-state="in_progress"] .node__dot {
+  background: var(--color-primary-soft);
+  box-shadow: 0 0 14px var(--color-glow-soft);
+}
+#app[data-page="skills"] .node[data-state="fragile"] .node__dot {
+  background: var(--color-warning);
+}
+#app[data-page="skills"] .node[data-state="acquired"] .node__dot {
+  background: var(--color-success);
+}
+#app[data-page="skills"] .node[data-state="locked"] {
+  opacity: 0.55;
+}
+
+/* =========================
+   SETTINGS / MORE
+   ========================= */
+#app[data-page="settings"] .settings-list {
+  display: grid;
+  gap: var(--space-3);
+}
+
+#app[data-page="settings"] .settings-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+#app[data-page="settings"] .settings-row__meta {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+}
+
+/* =========================
+   RESPONSIVE tweaks
+   ========================= */
+@media (min-width: 720px) {
+  #app[data-page="cockpit"] .cockpit-grid {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+
+  #app[data-page="journal"] .journal-toolbar {
+    grid-template-columns: 1fr auto;
+    align-items: center;
+  }
+}
+/* ===== Flashcards Review ===== */
+
+.rating-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.review-card {
+  position: relative;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border-soft);
+  background: rgba(255,255,255,0.03);
+  overflow: hidden;
+}
+
+.review-card__top {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--color-border-soft);
+}
+
+.review-card__face {
+  padding: 14px;
+}
+
+.review-card__label {
+  color: var(--color-text-secondary);
+  font-size: 0.9rem;
+  margin-bottom: 8px;
+}
+
+.review-card__text {
+  font-size: 1.05rem;
+  line-height: 1.35;
+}
+
+.review-card__tap {
+  margin-top: 12px;
+  font-size: 0.85rem;
+}
+
+/* Flip logic (simple) */
+.review-card__back { display: none; }
+.review-card.is-flipped .review-card__front { display: none; }
+.review-card.is-flipped .review-card__back { display: block; }
